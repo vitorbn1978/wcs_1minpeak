@@ -3,7 +3,7 @@ import os
 import re
 
 # Definir o caminho da pasta contendo os arquivos CSV
-pasta = 'C:/Users/Vitor Bertoli/Downloads/Semana 48-20241215T125111Z-001/Semana 48'
+pasta = 'C:/Users/Semana 48'
 
 # Obter a lista de arquivos CSV na pasta
 arquivos_csv = [f for f in os.listdir(pasta) if f.endswith('.csv')]
@@ -16,7 +16,7 @@ def extrair_nome_atleta(arquivo):
         return nome
     return "Desconhecido"
 
-# Função para processar os dados de acordo com o tipo de análise
+# Função para processar os dados
 def processar_dados(arquivos_csv, tipo, pasta):
     resultados = {}
 
@@ -72,7 +72,7 @@ def processar_dados(arquivos_csv, tipo, pasta):
             # Extrair o nome do atleta
             nome_atleta = extrair_nome_atleta(arquivo)
 
-            # Armazenar o resultado no dicionário, usando o arquivo como chave
+            # Armazenar o resultado, usando o arquivo como chave
             if arquivo not in resultados:
                 resultados[arquivo] = {'Nome': nome_atleta, 'Data': data_jogo, 'Distancia Total': total_distance}
             resultados[arquivo][tipo] = max_distance
@@ -94,7 +94,7 @@ for tipo in ['Alta Intensidade', 'Sprint', 'Aceleração', 'Desaceleração', 'D
 # Remover duplicatas de colunas desnecessárias
 todos_resultados = todos_resultados.loc[:, ~todos_resultados.columns.duplicated()]
 
-# Salvar todos os resultados em uma única página do Excel
+# Salvar todos os resultados  Excel
 resultado_excel = os.path.join(pasta, 'resultados_wcs.xlsx')
 todos_resultados.to_excel(resultado_excel, index=False)
 
