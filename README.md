@@ -46,6 +46,6 @@ Os arquivos devem ter um cabeçalho ignorado nas primeiras 8 linhas, e a data do
 Os resultados serão armazenados em um DataFrame consolidado e salvos no arquivo `resultados_wcs.xlsx`.
 
 ## Autor
-Este código foi desenvolvido para auxiliar na análise de dados de GPS de atletas, possibilitando uma avaliação detalhada do desempenho físico.
+Este código foi desenvolvido para auxiliar na análise de dados de GPS de atletas, possibilitando uma avaliação detalhada do desempenho físico por Gabriel Colodel para TCC PUCPR2024 e alterado por Vitor Bertoli Nascimento.
 
 
